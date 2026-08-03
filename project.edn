@@ -5,7 +5,7 @@
  :project/source-paths []
  :project/test-paths []
  :project/extension-paths []
- :project/capabilities [:canvas/webgl2 :input/pointer :ui/surfaces]
+ :project/capabilities [:canvas/webgl2 :input/pointer :ui/dom-surface]
  :project/world
  {:world/version "1.0.0"
   :world/title "Playbot"
@@ -21,10 +21,13 @@
   :world/touchpoints
   [{:touchpoint/id music-studio
     :touchpoint/label "Open Studio"
-    :touchpoint/description "Bring local recordings into a Hara-carried music workspace"
-    :touchpoint/surface :studio
+    :touchpoint/surface hodos/studio
     :touchpoint/presentation :panel
-    :touchpoint/transform {:world/position [0 1.05 0]
-                           :world/rotation [0 0 0]
-                           :world/scale 1}}]
+    :touchpoint/anchor :world
+    :touchpoint/position [0 1.05 0]
+    :touchpoint/radius 0.8
+    :touchpoint/camera {:world/position [3.2 1.8 3.2]
+                        :world/target [0 1.05 0]
+                        :world/fov 60}
+    :touchpoint/config {:project "local/current"}}]
   :world/imports []}}
