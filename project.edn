@@ -1,11 +1,11 @@
 {:hara/type :project
  :hara/version "1.0.0"
  :project/id greenways-worlds/playbot
- :project/version "1.0.0"
+ :project/version "1.1.0"
  :project/source-paths []
  :project/test-paths []
  :project/extension-paths []
- :project/capabilities [:canvas/webgl2 :input/pointer]
+ :project/capabilities [:canvas/webgl2 :input/pointer :ui/dom-surface]
  :project/world
  {:world/version "1.0.0"
   :world/title "Playbot"
@@ -18,4 +18,16 @@
                   :world/transform {:world/position [0 0 0]
                                     :world/rotation [180 0 0]
                                     :world/scale 1}}]
+  :world/touchpoints
+  [{:touchpoint/id music-studio
+    :touchpoint/label "Open Studio"
+    :touchpoint/surface hodos/studio
+    :touchpoint/presentation :panel
+    :touchpoint/anchor :world
+    :touchpoint/position [0 1.05 0]
+    :touchpoint/radius 0.8
+    :touchpoint/camera {:world/position [3.2 1.8 3.2]
+                        :world/target [0 1.05 0]
+                        :world/fov 60}
+    :touchpoint/config {:project "local/current"}}]
   :world/imports []}}
