@@ -10,9 +10,12 @@
  {:world/version "1.0.0"
   :world/title "Playbot"
   :world/background "#10121a"
-  :world/camera {:world/position [0 1.5 4]
-                 :world/target [0 1 0]
-                 :world/fov 50}
+  :world/camera {:world/position [4 2.6 4]
+                 :world/target [0 0.8 0]
+                 :world/fov 75}
   :world/layers [{:world/id playbot
-                  :world/asset "world/playbot/lod-meta.json"}]
+                  :world/asset "world/playbot/lod-meta.json"
+                  :world/transform {:world/position [0 0 0]
+                                    :world/rotation [180 0 0]
+                                    :world/scale 1}}]
   :world/imports []}}
